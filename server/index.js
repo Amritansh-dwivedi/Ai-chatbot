@@ -3,7 +3,7 @@ let cors=require("cors")
 require("dotenv").config()
 let {GoogleGenerativeAI} =require("@google/generative-ai")
 let App=express()
-App.use(cors()) //Middleware
+App.use(cors("*")) //Middleware
 App.use(express.json())
 
 let genAI=new GoogleGenerativeAI(process.env.KEY)
